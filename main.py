@@ -196,14 +196,14 @@ if __name__ == "__main__":
         testset = torchvision.datasets.MNIST(root='../../ButterFly/data', train=False, download=True, transform=transform_test)
         testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=4)
     elif config.dataset == 'cifar10':
-        trainset = torchvision.datasets.CIFAR10(root='../../ButterFly/data', train=True, download=True, transform=transform_train)
+        trainset = torchvision.datasets.CIFAR10(root='/data/gpfs/projects/punim0512/cifar10/', train=True, download=True, transform=transform_train)
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=4)
-        testset = torchvision.datasets.CIFAR10(root='../../ButterFly/data', train=False, download=True, transform=transform_test)
+        testset = torchvision.datasets.CIFAR10(root='/data/gpfs/projects/punim0512/cifar10/', train=False, download=True, transform=transform_test)
         testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=4)
     elif config.dataset == 'cifar100':
-        trainset = torchvision.datasets.CIFAR100(root='../../ButterFly/data', train=True, download=True, transform=transform_train)
+        trainset = torchvision.datasets.CIFAR100(root='/data/gpfs/projects/punim0512/cifar100/', train=True, download=True, transform=transform_train)
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=4)
-        testset = torchvision.datasets.CIFAR100(root='../../ButterFly/data', train=False, download=True, transform=transform_test)
+        testset = torchvision.datasets.CIFAR100(root='/data/gpfs/projects/punim0512/cifar100/', train=False, download=True, transform=transform_test)
         testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=4)
 
     run(trainset, trainloader, testloader, config)
